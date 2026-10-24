@@ -16,6 +16,8 @@ const GRADES = {
   "10": {name:"Grade 10", subjects:[]}
 };
 
-const WORKSHEETS = [
-  {grade:"r", subject:"Tracing", title:"Tracing Lines", page:"grade-r-tracing-lines.html"}
+const TYPES = ["Worksheet","Study Guide","Notes & Explanations","Mind Map"];
+
+const RESOURCES = [
+  {grade:"r", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"}
 ];
