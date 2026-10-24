@@ -1,0 +1,10 @@
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fb;color:#222;line-height:1.5}
+header{background:#6a3df0;color:#fff;padding:24px 16px;text-align:center}
+header h1{margin:0 0 4px}
+nav{background:#fff;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+nav a{text-decoration:none;color:#6a3df0;font-weight:bold;padding:8px 14px;border-radius:20px}
+nav a:hover{background:#ece6ff}
+main{padding:16px;max-width:700px;margin:auto}
+.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.card h2{margin:0 0 6px;font-size:18px}
+footer{text-align:center;padding:20px;font-size:13px;color:#666}
