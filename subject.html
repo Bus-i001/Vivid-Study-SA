@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Worksheets - Vivid Study SA</title>
+<title>Resources - Vivid Study SA</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><h1>Vivid Study SA</h1><p>Worksheets and study material</p></header>
+<header><h1>Vivid Study SA</h1><p>Worksheets, study guides and notes</p></header>
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -38,20 +38,34 @@ if(!info||info.subjects.indexOf(s)===-1){
   var back=document.getElementById("back");
   back.href="grade.html?g="+encodeURIComponent(g);
   back.textContent="< Back to "+info.name;
-  var items=WORKSHEETS.filter(function(w){return w.grade===g&&w.subject===s;});
+  var items=RESOURCES.filter(function(w){return w.grade===g&&w.subject===s;});
   if(items.length===0){
     var m=document.createElement("p");
     m.className="soon";
-    m.textContent="Worksheets coming soon.";
+    m.textContent="Resources coming soon.";
     list.appendChild(m);
   }else{
-    items.forEach(function(w){
-      var a=document.createElement("a");
-      a.className="pill";
-      a.style.marginBottom="10px";
-      a.href=w.page;
-      a.textContent=w.title;
-      list.appendChild(a);
+    TYPES.forEach(function(t){
+      var group=items.filter(function(w){return w.type===t;});
+      if(group.length===0){return;}
+      var h=document.createElement("h3");
+      h.textContent=t;
+      list.appendChild(h);
+      group.forEach(function(w){
+        var a=document.createElement("a");
+        a.className="pill";
+        a.style.marginBottom="10px";
+        a.href=w.page;
+        a.textContent=w.title;
+        list.appendChild(a);
+        if(w.video){
+          var v=document.createElement("a");
+          v.className="crumb";
+          v.href=w.video;
+          v.textContent="Watch the video lesson";
+          list.appendChild(v);
+        }
+      });
     });
   }
 }
