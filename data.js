@@ -19,5 +19,6 @@ const GRADES = {
 const TYPES = ["Worksheet","Study Guide","Notes & Explanations","Mind Map"];
 
 const RESOURCES = [
-  {grade:"r", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"}
+  {grade:"r", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"},
+  {grade:"1", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"}
 ];
