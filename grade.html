@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choose a subject - Vivid Study SA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Vivid Study SA</h1><p>Choose a subject</p></header>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mystudy.html">My Study</a>
+<a href="contact.html">Contact</a>
+</nav>
+<main>
+<div class="card">
+<a class="crumb" href="index.html">&lt; Back to Home</a>
+<h2 id="title"></h2>
+<div class="grid" id="list"></div>
+</div>
+</main>
+<footer>&copy; 2026 Vivid Study SA</footer>
+<script src="data.js"></script>
+<script>
+var params=new URLSearchParams(location.search);
+var g=params.get("g");
+var info=GRADES[g];
+var title=document.getElementById("title");
+var list=document.getElementById("list");
+if(!info){
+  title.textContent="Grade not found";
+}else{
+  title.textContent=info.name;
+  document.title=info.name+" - Vivid Study SA";
+  if(info.subjects.length===0){
+    var m=document.createElement("p");
+    m.className="soon";
+    m.textContent="Coming soon.";
+    list.appendChild(m);
+  }else{
+    info.subjects.forEach(function(sub){
+      var a=document.createElement("a");
+      a.className="pill";
+      a.href="subject.html?g="+encodeURIComponent(g)+"&s="+encodeURIComponent(sub);
+      a.textContent=sub;
+      list.appendChild(a);
+    });
+  }
+}
+</script>
+</body>
+</html>
