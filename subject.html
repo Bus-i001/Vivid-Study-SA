@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worksheets - Vivid Study SA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Vivid Study SA</h1><p>Worksheets and study material</p></header>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mystudy.html">My Study</a>
+<a href="contact.html">Contact</a>
+</nav>
+<main>
+<div class="card">
+<a class="crumb" id="back" href="index.html">&lt; Back to Home</a>
+<h2 id="title"></h2>
+<div id="list"></div>
+</div>
+</main>
+<footer>&copy; 2026 Vivid Study SA</footer>
+<script src="data.js"></script>
+<script>
+var params=new URLSearchParams(location.search);
+var g=params.get("g");
+var s=params.get("s");
+var info=GRADES[g];
+var title=document.getElementById("title");
+var list=document.getElementById("list");
+if(!info||info.subjects.indexOf(s)===-1){
+  title.textContent="Page not found";
+}else{
+  title.textContent=info.name+" - "+s;
+  document.title=info.name+" "+s+" - Vivid Study SA";
+  var back=document.getElementById("back");
+  back.href="grade.html?g="+encodeURIComponent(g);
+  back.textContent="< Back to "+info.name;
+  var items=WORKSHEETS.filter(function(w){return w.grade===g&&w.subject===s;});
+  if(items.length===0){
+    var m=document.createElement("p");
+    m.className="soon";
+    m.textContent="Worksheets coming soon.";
+    list.appendChild(m);
+  }else{
+    items.forEach(function(w){
+      var a=document.createElement("a");
+      a.className="pill";
+      a.style.marginBottom="10px";
+      a.href=w.page;
+      a.textContent=w.title;
+      list.appendChild(a);
+    });
+  }
+}
+</script>
+</body>
+</html>
