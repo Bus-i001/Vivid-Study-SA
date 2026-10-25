@@ -22,5 +22,6 @@ const RESOURCES = [
   {grade:"r", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"},
   {grade:"1", subject:"Tracing", type:"Worksheet", title:"Tracing Lines", page:"grade-r-tracing-lines.html"},
   {grade:"r", subject:"Colouring", type:"Worksheet", title:"Learning Colours", page:"grade-r-learning-colours.html"},
-  {grade:"r", subject:"Colours", type:"Worksheet", title:"Learning Colours", page:"grade-r-learning-colours.html"}
+  {grade:"r", subject:"Colours", type:"Worksheet", title:"Learning Colours", page:"grade-r-learning-colours.html"},
+{grade:"r", subject:"Shapes", type:"Worksheet", title:"Learning Shapes", page:"grade-r-learning-shapes.html"}
 ];
